@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://localhost:3001/api/pokemon'
+const baseUrl = 'http://localhost:8080/api/pokemon'
 
 export const catchPokemon = async (pokemon) => {
   try {
@@ -27,7 +27,7 @@ export const releasePokemon = async (id) => {
 }
 
 export const renamePokemon = async (id, name) => {
-  console.log(name, "API---")
+  // console.log(name, "API---")
   try {
     const response = await axios.post(`${baseUrl}/rename`, { id, name }, {
       headers: {
