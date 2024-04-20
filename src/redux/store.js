@@ -1,4 +1,4 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { thunk } from 'redux-thunk'  // Correct the import to specifically import `thunk`
 import rootReducer from './reducers'
 
