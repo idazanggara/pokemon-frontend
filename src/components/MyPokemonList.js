@@ -26,7 +26,7 @@ function MyPokemonList() {
 
   const handleRename = async (pokemon) => {
     let newName
-    let nextFib 
+    let nextFib
 
     if (typeof pokemon.fibCount === 'undefined' || pokemon.fibCount === null) {
       newName = await renamePokemon(pokemon.id, `${pokemon.nickname}-0`)
