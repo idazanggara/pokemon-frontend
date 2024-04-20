@@ -10,7 +10,7 @@ function App() {
     <Router>
       <AppBar position="static" sx={{ mb: 4 }}>
         <Toolbar sx={{ justifyContent: 'space-between' }}>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
+          <Typography variant="h6" component={Link} to="/" style={{ flexGrow: 1 }}>
             PokéDex
           </Typography>
           <Button color="inherit" component={Link} to="/">Home</Button>

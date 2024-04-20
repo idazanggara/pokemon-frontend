@@ -25,17 +25,9 @@ function MyPokemonList() {
   }
 
   const handleRename = async (pokemon) => {
-    let newName
-    let nextFib
 
-    if (typeof pokemon.fibCount === 'undefined' || pokemon.fibCount === null) {
-      newName = await renamePokemon(pokemon.id, `${pokemon.nickname}-0`)
-      nextFib = 1
-    } else {
-      newName = await renamePokemon(pokemon.id, `${pokemon.nickname}-${pokemon.fibCount}`)
-      nextFib = pokemon.fibCount + 1
-    }
-    // const newName = await renamePokemon(pokemon.id, pokemon.nickname)
+    const nextFib = pokemon.fibCount + 1
+    const newName = await renamePokemon(pokemon.id, pokemon.nickname)
     if (newName) {
       dispatch(renamePokemonAction(pokemon.id, newName, nextFib))
       alert(`Pokémon renamed successfully to ${newName}.`)
@@ -60,10 +52,10 @@ function MyPokemonList() {
                 alt={pokemon.nickname}
                 style={{ height: 140, width: 'auto', margin: 'auto' }}
               />
-              <Button onClick={() => handleRename(pokemon)} color="primary">
+              <Button onClick={() => handleRename(pokemon)} color="primary" variant="contained" sx={{ mr: 1 }}>
                 Rename
               </Button>
-              <Button onClick={() => handleRelease(pokemon.id)} color="secondary">
+              <Button onClick={() => handleRelease(pokemon.id)} color="secondary" variant="contained" sx={{ ml: 1 }}>
                 Release
               </Button>
             </CardContent>
